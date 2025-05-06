@@ -61,4 +61,26 @@ footer {
         <p>&copy; 2025 Simple Web Application</p>
     </footer>
 </body>
+    <script>
+        // Get the form and response message elements
+const form = document.getElementById('contact-form');
+const responseMessage = document.getElementById('response-message');
+
+// Handle form submission
+form.addEventListener('submit', function (event) {
+    event.preventDefault();  // Prevent the form from submitting normally
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    
+    // Simple form validation
+    if (name && email) {
+        responseMessage.innerHTML = `<h2>Thank you for submitting your information, ${name}!</h2>
+                                     <p>Your email: ${email}</p>`;
+    } else {
+        responseMessage.innerHTML = `<h2>Please fill in all the fields.</h2>`;
+    }
+});
+
+    </script>
 </html>
